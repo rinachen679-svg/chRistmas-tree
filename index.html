@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>圣诞树互动装饰</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>可爱圣诞树 · 一起装饰吧 🎄</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>🎄 圣诞快乐！来装饰圣诞树吧 🎄</h1>
+  <header class="topbar">
+    <h1>🎁 可爱圣诞树 · 一起装饰吧</h1>
+    <div class="actions">
+      <button id="clearBtn" title="清空并重置">🧽 清空</button>
+      <button id="exportBtn" title="下载树的快照">📷 截图</button>
+    </div>
+  </header>
 
-<canvas id="treeCanvas" width="400" height="600"></canvas>
+  <main class="main">
+    <section class="left">
+      <div class="tree-wrap">
+        <canvas id="treeCanvas" width="420" height="640"></canvas>
+        <div id="dropHint" class="drop-hint">点击或把贴纸拖到树上✨</div>
+      </div>
 
-<div id="decorations">
-  <button onclick="setColor('red')">红色</button>
-  <button onclick="setColor('green')">绿色</button>
-  <button onclick="setColor('yellow')">黄色</button>
-  <button onclick="setColor('blue')">蓝色</button>
-</div>
+      <div class="message-panel">
+        <div class="msg-input">
+          <input id="msgText" placeholder="写点祝福（匿名）..." maxlength="80">
+          <button id="sendMsg">发送</button>
+        </div>
+        <div id="msgArea" class="msg-area"></div>
+      </div>
+    </section>
 
-<div id="messages">
-  <h3>匿名留言</h3>
-  <input type="text" id="msgInput" placeholder="写点祝福..." />
-  <button onclick="sendMessage()">发送</button>
-  <ul id="msgList"></ul>
-</div>
+    <aside class="right">
+      <div class="palette">
+        <h3>贴纸 & 装饰</h3>
+        <div class="stickers" id="stickers">
+          <!-- 按钮由 JS 插入 -->
+        </div>
+      </div>
+
+      <div class="help">
+        <h4>操作提示</h4>
+        <ul>
+          <li>点击画布在树上放置装饰</li>
+          <li>或从左侧拖动贴纸到树上，放开即可</li>
+          <li>拖动已放置的装饰可以移动位置</li>
+          <li>留言会以可爱卡片漂浮在树周围</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <div id="snow"></div>
+
+  <footer class="foot">
+    <small>匿名留言 · 点击头像可删除（仅本地） · 数据保存在你的浏览器</small>
+  </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+

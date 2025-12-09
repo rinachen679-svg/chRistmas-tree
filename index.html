@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>圣诞树互动装饰</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>🎄 圣诞快乐！来装饰圣诞树吧 🎄</h1>
+
+<canvas id="treeCanvas" width="400" height="600"></canvas>
+
+<div id="decorations">
+  <button onclick="setColor('red')">红色</button>
+  <button onclick="setColor('green')">绿色</button>
+  <button onclick="setColor('yellow')">黄色</button>
+  <button onclick="setColor('blue')">蓝色</button>
+</div>
+
+<div id="messages">
+  <h3>匿名留言</h3>
+  <input type="text" id="msgInput" placeholder="写点祝福..." />
+  <button onclick="sendMessage()">发送</button>
+  <ul id="msgList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
